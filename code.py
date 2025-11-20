@@ -29,7 +29,7 @@ edit_message_text(
 
 
 async def main():
-    app = ApplicationBuilder().token(8201961290:AAHW76Rh21ArYey8um56d2R4yDPgFvFWal4).build()
+    app = ApplicationBuilder().token("8201961290:AAHW76Rh21ArYey8um56d2R4yDPgFvFWal4").build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(callback))
@@ -37,6 +37,6 @@ async def main():
     await app.run_polling()
 
 
-if name == "__main__":
+if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
