@@ -5,7 +5,7 @@ edit_message_text(
 
         # Level: country
         if user["level"] == "country":
-            cont = user["continent"]
+          cont = user["continent"]
             if name in DB[cont]:
                 user["level"] = "brand"
                 user["country"] = name
