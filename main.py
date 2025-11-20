@@ -5,11 +5,11 @@ edit_message_text(
 
         # Level: country
         if user["level"] == "country":
-          cont = user["continent"]
+        cont = user["continent"]
             if name in DB[cont]:
-                user["level"] = "brand"
-                user["country"] = name
-                user["page"] = 0
+            user["level"] = "brand"
+            user["country"] = name
+            user["page"] = 0
 
                 brands = list(DB[cont][name].keys())
                 return await query.edit_message_text(
@@ -19,10 +19,10 @@ edit_message_text(
 
         # Level: brand
         if user["level"] == "brand":
-            cont = user["continent"]
-            cnt = user["country"]
+        cont = user["continent"]
+        cnt = user["country"]
             if name in DB[cont][cnt]:
-                link = DB[cont][cnt][name]
+            link = DB[cont][cnt][name]
                 return await query.edit_message_text(
                     f"Марка: {name}\nСайт: {link}"
                 )
@@ -38,5 +38,5 @@ async def main():
 
 
 if name == "__main__":
-    import asyncio
-    asyncio.run(main())
+import asyncio
+asyncio.run(main())
